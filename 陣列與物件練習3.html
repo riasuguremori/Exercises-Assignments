@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            [33, 32, 56, 45, 33],
+            [77, 33, 68, 45, 23],
+            [43, 55, 43, 67, 65]
+        ]
+        const prices = [12, 16, 10, 14, 15]
+        // let count = 0
+        // for (let i = 0; i < data[0].length; i++) {
+        //     count += data[0][i] * prices[i]
+        // }
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data[1].length; i++) {
+        //     count += data[1][i] * prices[i]
+        // }
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data[2].length; i++) {
+        //     count += data[2][i] * prices[i]
+        // }
+
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data.length; i++) {
+        //     count += data[i][0] * prices[0]
+        // }
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data.length; i++) {
+        //     count += data[i][1] * prices[1]
+        // }
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data.length; i++) {
+        //     count += data[i][2] * prices[2]
+        // }
+        // console.log(count)
+        // count = 0
+        // for (let i = 0; i < data.length; i++) {
+        //     count += data[i][3] * prices[3]
+        // }
+        // console.log(count)
+
+        const totalSales = [0, 0, 0]
+        const totalProducts = [0, 0, 0, 0, 0]
+
+        for (let i = 0; i < data.length; i++) {
+            for (let p = 0; p < data[i].length; p++) {
+                const money = data[i][p] * prices[p]
+                totalSales[i] += money
+                totalProducts[p] += money
+            }
+        }
+        console.log(totalSales)
+        console.log(totalProducts)
+    </script>
+</body>
+
+</html>

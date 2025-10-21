@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const rand = (min, max) => {
+            const ceilmin = Math.ceil(min)
+            const floormax = Math.floor(max)
+            return Math.floor(Math.random() * (floormax - ceilmin + 1) + ceilmin)
+        }
+        const min = prompt('最小數字')
+        const max = prompt('最大數字')
+        document.write(rand(min, max))
+    </script>
+</body>
+
+</html>

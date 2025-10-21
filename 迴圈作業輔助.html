@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+        parseInt (文字或變數)
+        將提供的資料轉成整數，如果要轉成小數用 parseFloat
+        如果將 abc 之類的文字放到 parseInt 或 parseFloat 裡面，會得到 NaN
+        NaN 不能用 == 判斷，只能用 isNaN() 判斷
+        parseInt('abc') == NaN 會得到 false
+        isNaN(parseInt('abc')) 會得到 true
+        */
+        const year = parseInt(prompt('年'))
+        console.log(year, isNaN(year))
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const decrypt = (text) => {
+            const array = []
+            for (let i = 0; i < text.length - 1; i++) {
+                array.push(Math.abs(text.charCodeAt(i) - text.charCodeAt(i + 1)))
+            } return array.join('')
+        }
+        const input = prompt('輸入文字')
+        console.log(decrypt(input))
+    </script>
+</body>
+
+
+</html>

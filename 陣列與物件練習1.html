@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const numbers = [
+            prompt('第一個數字'),
+            prompt('第二個數字'),
+            prompt('第三個數字'),
+            prompt('第四個數字'),
+            prompt('第五個數字')
+        ]
+        for (let i = 0; i < numbers.length; i++) {
+            document.write(`第${i + 1}個數字為${numbers[i]}<br>`)
+        }
+
+        let countodd = 0
+        let counteven = 0
+        for (let i = 0; i < numbers.length; i++) {
+            if (numbers[i] % 2 == 1) {
+                countodd++
+            } else {
+                counteven++
+            }
+        }
+        document.write(`有${countodd}個奇數，有${counteven}個偶數`)
+
+        let max = numbers[0]
+        let min = numbers[0]
+        for (let i = 0; i < numbers.length; i++) {
+            if (max < parseInt(numbers[i])) {
+                max = parseInt(numbers[i])
+            }
+            if (min > parseInt(numbers[i])) {
+                min = parseInt(numbers[i])
+            }
+        }
+        console.log(max)
+        console.log(min)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const user = parseInt(prompt('輸入數字，得到費氏數列'))
+
+        let x = 0
+        let y = 1
+        for (let i = 0; i <= user; i++) {
+            document.write(x + '<br>')
+            let count = x + y
+            x = y
+            y = count
+        }
+        document.write(i)
+    </script>
+</body>
+
+</html>

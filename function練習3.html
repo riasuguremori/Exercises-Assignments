@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const isClose = (text) => {
+            console.log(text, typeof text)
+            for (let i = 0; i <= text.length; i++) {
+                let count = 0
+                if (text[i] === '(') {
+                    count++
+                } else if (text[i] === ')') {
+                    count--
+                }
+                if (count > 0 || count < 0) {
+                    return false
+                }
+            } return true
+        }
+        const result = isClose(prompt('輸入文字'))
+        console.log(result)
+    </script>
+</body>
+
+</html>

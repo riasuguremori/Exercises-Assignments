@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .time {
+      font-size: 5rem;
+      margin: 0;
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+  <h1 class="time"></h1>
+  <script>
+    const text = document.querySelector('.time')
+    const input = prompt('輸入秒數')
+    // if (isNaN(input) === true) {
+    //   text.innerText = '請輸入數字'
+    // }
+    let i = input * 1
+    const countdown = () => {
+      text.innerText = `剩餘 ${i} 秒`
+      text.style.color = 'blue'
+      i--
+      if (i < 0) {
+        clearInterval(timer)
+        text.innerText = `時間到`
+        text.style.color = 'red'
+      }
+    }
+    const timer = setInterval(countdown, 1000)
+    countdown()
+  </script>
+</body>
+
+</html>

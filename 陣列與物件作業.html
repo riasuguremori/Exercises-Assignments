@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const data = [
+            [18.2, 17.3, 15.0, 13.4],
+            [23.8, 25.1, 20.6, 17.8],
+            [20.6, 21.5, 18.4, 15.7]
+        ]
+        document.write(`<table border="1";">`)
+        for (let i = 0; i < data.length; i++) {
+            document.write('<tr>')
+            for (let p = 0; p < data[i].length; p++) {
+                document.write(`<td>${data[i][p]}</td>`)
+            }
+            document.write('</tr>')
+        }
+        document.write(`</table>`)
+
+        const timetemp = [0, 0, 0]
+        const weektemp = [0, 0, 0, 0]
+
+        for (let i = 0; i < data.length; i++) {
+            for (let p = 0; p < data[i].length; p++) {
+                const temp = data[i][p]
+                timetemp[i] += temp / 4
+                weektemp[p] += temp / 3
+            }
+        }
+        console.log(timetemp)
+        console.log(weektemp)
+
+        let max = data[0][0]
+        let min = data[0][0]
+        for (let i = 0; i < data.length; i++) {
+            for (let p = 0; p < data[i].length; p++) {
+                if (max < data[i][p]) {
+                    max = data[i][p]
+                    let maxtime = 0
+                    let maxweek = 0
+                    maxtime = i
+                    maxweek = p
+                }
+                if (min > data[i][p]) {
+                    min = data[i][p]
+                    let mintime = 0
+                    let minweek = 0
+                    mintime = i
+                    minweek = p
+                }
+            }
+        }
+        console.log(max)
+        console.log(maxtime + 1)
+        console.log(maxweek + 1)
+
+        console.log(min)
+        console.log(mintime + 1)
+        console.log(minweek + 1)
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        const prime = (number) => {
+            if (number <= 1) {
+                return false
+            }
+            for (let i = 2; i < Math.sqrt(number - 1); i++) {
+                if (number % i == 0) {
+                    return false
+                }
+            } return true
+        }
+        const maxnum = prompt('輸入數字')
+        const input = prime(parseInt(maxnum))
+        document.write(input + '<br>')
+
+
+        const primelist = () => {
+            const array = []
+            for (let i = 2; i <= maxnum; i++) {
+                if (prime(i)) {
+                    array.push(i)
+                }
+            } return array
+        }
+        document.write(primelist())
+    </script>
+</body>
+
+</html>
