@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="button" value="剪刀" id="scissors">
+    <input type="button" value="石頭" id="rock">
+    <input type="button" value="布" id="paper">
+  </div>
+  <ul id="list"></ul>
+  <script>
+    const scissors = document.getElementById('scissors')
+    const rock = document.getElementById('rock')
+    const paper = document.getElementById('paper')
+
+    scissors.onclick = () => {
+      const computer = ['剪刀', '石頭', '布']
+      const random = Math.floor(Math.random() * 3)
+      const li = document.createElement('li')
+      let result = ''
+      if (random === 0) {
+        result = '平手'
+      } else if (random === 2) {
+        result = '我贏了'
+      } else if (random === 1) {
+        result = '我輸了'
+      }
+      alert(`我出剪刀，電腦出${computer[random]}，結果${result}`)
+      li.innerText = `我出剪刀，電腦出${computer[random]}，結果${result}`
+      list.prepend(li)
+    }
+
+    rock.onclick = () => {
+      const computer = ['剪刀', '石頭', '布']
+      const random = Math.floor(Math.random() * 3)
+      const li = document.createElement('li')
+      let result = ''
+      if (random === 1) {
+        result = '平手'
+      } else if (random === 0) {
+        result = '我贏了'
+      } else if (random === 2) {
+        result = '我輸了'
+      }
+      alert(`我出石頭，電腦出${computer[random]}，結果${result}`)
+      li.innerText = `我出石頭，電腦出${computer[random]}，結果${result}`
+      list.prepend(li)
+    }
+
+
+    paper.onclick = () => {
+      const computer = ['剪刀', '石頭', '布']
+      const random = Math.floor(Math.random() * 3)
+      const li = document.createElement('li')
+      let result = ''
+      if (random === 2) {
+        result = '平手'
+      } else if (random === 1) {
+        result = '我贏了'
+      } else if (random === 0) {
+        result = '我輸了'
+      }
+      alert(`我出布，電腦出${computer[random]}，結果${result}`)
+      li.innerText = `我出布，電腦出${computer[random]}，結果${result}`
+      list.prepend(li)
+    }
+  </script>
+</body>
+
+</html>

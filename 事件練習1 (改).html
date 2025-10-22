@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div>
+    <input type="button" value="剪刀" class="player">
+    <input type="button" value="石頭" class="player">
+    <input type="button" value="布" class="player">
+  </div>
+  <p>
+    贏:<span id="win">0</span>
+    輸:<span id="lose">0</span>
+    平手:<span id="tie">0</span>
+  </p>
+  <ul id="list"></ul>
+  <script>
+    const player = document.getElementsByClassName('player')
+    const win = document.getElementById('win')
+    const lose = document.getElementById('lose')
+    const tie = document.getElementById('tie')
+    for (const el of player) {
+      el.onclick = () => {
+        const computer = ['剪刀', '石頭', '布']
+        const random = Math.floor(Math.random() * 3)
+        const li = document.createElement('li')
+        let player = el.value
+        let result = ''
+        if (player === computer[random]) {
+          result = '平手'
+          tie.innerText++
+        } else if ((player === '剪刀' && computer[random] === '布') || (player === '石頭' && computer[random] === '剪刀') || (player === '布' && computer[random] === '石頭')) {
+          result = '我贏了'
+          win.innerText++
+        } else {
+          result = '我輸了'
+          lose.innerText++
+        }
+        alert(`我出${player}，電腦出${computer[random]}，結果${result}`)
+        li.innerText = `我出${player}，電腦出${computer[random]}，結果${result}`
+        list.prepend(li)
+      }
+    }
+  </script>
+</body>
+
+</html>

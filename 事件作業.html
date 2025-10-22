@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    #block {
+      width: 300px;
+      height: 300px;
+      border: 1px solid #000000;
+      background: white;
+    }
+
+    .color p {
+      display: inline-block;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="block"></div>
+  <div class="color"><input type="range" id="rangeR" min="0" max="255" step="1" value="0">
+    <p id="rangevalueR">0</p>
+    <input type="button" id="btnR" value="隨機">
+  </div>
+  <div class="color"><input type="range" id="rangeG" min="0" max="255" step="1" value="0">
+    <p id="rangevalueG">0</p>
+    <input type="button" id="btnG" value="隨機">
+  </div>
+  <div class="color"><input type="range" id="rangeB" min="0" max="255" step="1" value="0">
+    <p id="rangevalueB">0</p>
+    <input type="button" id="btnB" value="隨機">
+  </div>
+  <script>
+    const block = document.getElementById('block')
+    const rangeR = document.getElementById('rangeR')
+    const rangevalueR = document.getElementById('rangevalueR')
+    const rangeG = document.getElementById('rangeG')
+    const rangevalueG = document.getElementById('rangevalueG')
+    const rangeB = document.getElementById('rangeB')
+    const rangevalueB = document.getElementById('rangevalueB')
+    const btnR = document.getElementById('btnR')
+    const btnG = document.getElementById('btnG')
+    const btnB = document.getElementById('btnB')
+    const updateColor = () => {
+      const valueR = rangeR.value
+      const valueG = rangeG.value
+      const valueB = rangeB.value
+
+      rangevalueR.innerText = valueR
+      rangevalueG.innerText = valueG
+      rangevalueB.innerText = valueB
+
+      block.style.backgroundColor = `rgb(${valueR}, ${valueG}, ${valueB})`
+    }
+
+    rangeR.addEventListener('input', updateColor)
+    rangeG.addEventListener('input', updateColor)
+    rangeB.addEventListener('input', updateColor)
+
+    btnR.onclick = () => {
+      rangeR.value = Math.floor(Math.random() * (255 - 0 + 1) + 0)
+      updateColor()
+    }
+
+    btnG.onclick = () => {
+      rangeG.value = Math.floor(Math.random() * (255 - 0 + 1) + 0)
+      updateColor()
+    }
+
+    btnB.onclick = () => {
+      rangeB.value = Math.floor(Math.random() * (255 - 0 + 1) + 0)
+      updateColor()
+    }
+
+  </script>
+</body>
+
+</html>
